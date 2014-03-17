@@ -30,3 +30,42 @@ Web Services supporting the Tinaja Data Logging application.
 * TinajaWinService - to set up an additional monitoring service to respond to web service issues
 * TinajaWinServiceFormsApp - can't remember, sorry
 * TinajaWinSerrviceSetup - the actial setup.exe/.msi files (not included)
+
+
+== Usage from Python ==
+
+I use a python script to update sensor data into the SOAP based web service.  See the code in sample code at:
+https://github.com/TinajaLabs/gateway_raspi/blob/master/allsensors.py
+
+<pre>
+# import the SOAP library - https://pypi.python.org/pypi/suds
+from suds.client import Client
+
+# log to the SOAP based Tinaja data logger service
+def logtotinaja(lnSensorNum, lnLogVal, apiKey):
+
+	# lnSensorNum - the number of the sensor, not used in the SOAP service
+	# lnLogVal - the value to log
+	# apiKey - the key generated from genApiKey
+
+    if apiKey == "":
+        return
+
+    # print lnLogVal, apiKey
+    try:
+        insertResult = client.service.insertLog(apiKey, lnLogVal)
+
+        # Inserted all right?
+        if insertResult == "Inserted":
+            what= ""
+            # print "Data inserted OK"
+            # print "Sensor# ", lnSensorNum, "logged ", lnLogVal, " to Tinaja data logger: ", apiKey
+
+        else:
+            print "Error:", insertResult
+    except:
+        print "Couldn't connect to ", TINAJALOGURL
+        syslog.syslog("TLSM.logtotinaja exception: Couldn't connect to " + TINAJALOGURL)
+
+</pre>
+
