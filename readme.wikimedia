@@ -1,0 +1,32 @@
+This is a datalogger web service I wrote in 2010.  I built this in C# using VS2008.
+
+
+== C# .NET Web Service ==
+
+This is a very simple design for inserting records.  It was written in C#.  
+
+It has room for improvement, obviously.
+
+The general idea is to:
+* first retrieve a new API Key with the genApiKey method
+* use that apikey to insert and retrieve your data
+* insesertLog method requires apikey, logvalue and adds timestamp based on insert time
+* getLogsByApikeyHours retieves data for a given apikey for the most recent number of hours
+
+=== Basic Calls ===
+
+Web Services supporting the Tinaja Data Logging application.
+
+* genApiKey - Generate an API key for use with data logging calls
+* getAllLogs - Get all log entries as a collection of datalog objects
+* getLogsByApikey - Get all log entries by apikey as a collection of datalog objects
+* getLogsByApikeyHours - Get all log entries by apikey and for the last n number of hours, usually 24. For charting purposes.
+* insertLog - Insert a data log record - apikey, logvalue
+
+
+== The directories ==
+
+* DataLogService - the code that does the logging and exposed the web service plus the data model (.edmx file)
+* TinajaWinService - to set up an additional monitoring service to respond to web service issues
+* TinajaWinServiceFormsApp - can't remember, sorry
+* TinajaWinSerrviceSetup - the actial setup.exe/.msi files (not included)

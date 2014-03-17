@@ -1,0 +1,92 @@
+
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TinajaDataLogger", "http://localhost/TinajaDataLogger", "{591A51EB-814C-4244-BD95-09C08634786E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		ProjectReferences = "{C42FC014-7E12-4FAF-9BC9-79BF1529440D}|RSS.NET.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/TinajaDataLogger"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Inetpub\wwwroot\TinajaDataLogger\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\TinajaDataLogger\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/TinajaDataLogger"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Inetpub\wwwroot\TinajaDataLogger\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\TinajaDataLogger\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\Inetpub\wwwroot\TinajaDataLogger\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinajaWinService", "TinajaWinService\TinajaWinService.csproj", "{D2A39984-D630-43EC-B33C-8627621342B7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TinajaWinServiceSetup", "TinajaWinServiceSetup\TinajaWinServiceSetup.vdproj", "{4573AF0F-AFA2-4CE6-B45E-1F99D95C4766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinajaWinServiceFormsApp", "TinajaWinServiceFormsApp\TinajaWinServiceFormsApp.csproj", "{EE8100E1-CDD3-430C-B9FD-9A56B2CF9FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSS.NET", "..\RSS.NET\RSS.NET.csproj", "{C42FC014-7E12-4FAF-9BC9-79BF1529440D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLogService", "DataLogService\DataLogService.csproj", "{D7A3B71C-DE92-46FD-9F25-C9DCA2224AC2}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "N2CMS", "http://localhost/N2CMS", "{727127DF-289F-4F3F-9C75-268E1A5D89F5}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "2.0"
+		Debug.AspNetCompiler.VirtualPath = "/N2CMS"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Inetpub\wwwroot\N2CMS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\N2CMS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/N2CMS"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Inetpub\wwwroot\N2CMS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\N2CMS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\Inetpub\wwwroot\N2CMS\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{591A51EB-814C-4244-BD95-09C08634786E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591A51EB-814C-4244-BD95-09C08634786E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591A51EB-814C-4244-BD95-09C08634786E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{591A51EB-814C-4244-BD95-09C08634786E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D2A39984-D630-43EC-B33C-8627621342B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A39984-D630-43EC-B33C-8627621342B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A39984-D630-43EC-B33C-8627621342B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A39984-D630-43EC-B33C-8627621342B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4573AF0F-AFA2-4CE6-B45E-1F99D95C4766}.Debug|Any CPU.ActiveCfg = Debug
+		{4573AF0F-AFA2-4CE6-B45E-1F99D95C4766}.Release|Any CPU.ActiveCfg = Release
+		{EE8100E1-CDD3-430C-B9FD-9A56B2CF9FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8100E1-CDD3-430C-B9FD-9A56B2CF9FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8100E1-CDD3-430C-B9FD-9A56B2CF9FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8100E1-CDD3-430C-B9FD-9A56B2CF9FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C42FC014-7E12-4FAF-9BC9-79BF1529440D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42FC014-7E12-4FAF-9BC9-79BF1529440D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C42FC014-7E12-4FAF-9BC9-79BF1529440D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C42FC014-7E12-4FAF-9BC9-79BF1529440D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7A3B71C-DE92-46FD-9F25-C9DCA2224AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A3B71C-DE92-46FD-9F25-C9DCA2224AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A3B71C-DE92-46FD-9F25-C9DCA2224AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A3B71C-DE92-46FD-9F25-C9DCA2224AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{727127DF-289F-4F3F-9C75-268E1A5D89F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727127DF-289F-4F3F-9C75-268E1A5D89F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727127DF-289F-4F3F-9C75-268E1A5D89F5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{727127DF-289F-4F3F-9C75-268E1A5D89F5}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://freeranger.com/barreno/TinajaService.asmx?wsdl" docRef="http://freeranger.com/barreno/TinajaService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://freeranger.com/barreno/TinajaService.asmx" xmlns:q1="http://freeranger.com/tinajarm" binding="q1:Tinaja_x005F_x0020_Remote_x005F_x0020_MonitoringSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://freeranger.com/barreno/TinajaService.asmx" xmlns:q2="http://freeranger.com/tinajarm" binding="q2:Tinaja_x005F_x0020_Remote_x005F_x0020_MonitoringSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

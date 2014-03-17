@@ -1,0 +1,2272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://freeranger.com/tinajarm" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://freeranger.com/tinajarm" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Services supporting the Tinaja Remote Monitoring application.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://freeranger.com/tinajarm">
+      <s:element name="GetFTPSlides">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contextKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPSlidesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFTPSlidesResult" type="tns:ArrayOfSlide" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSlide">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Slide" nillable="true" type="tns:Slide" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Slide">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveCameraImageOnServerIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCameraImageOnServerIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveCameraImageOnServerIOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPFileListAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFTPFileListAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFTPFileListAllResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFTPFileListByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dateString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPFileListByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFTPFileListByDateResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPFileListByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPFileListByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFTPFileListByRangeResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPFileListByStartOrig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartHour" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPFileListByStartOrigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFTPFileListByStartOrigResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPFileListByStart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartHour" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTPFileListByStartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFTPFileListByStartResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileListFromLandingFTP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFileListFromLandingFTPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileListFromLandingFTPResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileListFromLandingIO">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFileListFromLandingIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileListFromLandingIOResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveImagesFromLanding">
+        <s:complexType />
+      </s:element>
+      <s:element name="MoveImagesFromLandingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MoveImagesFromLandingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHelpContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="indexkey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHelpContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHelpContentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHelpSubject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="indexkey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHelpSubjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHelpSubjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduledMethods">
+        <s:complexType />
+      </s:element>
+      <s:element name="ScheduledMethodsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScheduledMethodsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LastTimeCameraActive">
+        <s:complexType />
+      </s:element>
+      <s:element name="LastTimeCameraActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LastTimeCameraActiveResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsCameraActive">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsCameraActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsCameraActiveResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraActiveAlert">
+        <s:complexType />
+      </s:element>
+      <s:element name="CameraActiveAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraActiveAlertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailRecipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailRecipientName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apicode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDateRange">
+        <s:complexType />
+      </s:element>
+      <s:element name="setDateRangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDateStringFromDateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDateStringFromDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDateStringFromDateTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDateTimeFromDateString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dateString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDateTimeFromDateStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getDateTimeFromDateStringResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeaveALog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeaveALogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LeaveALogResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isDateBetween">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isDateBetweenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isDateBetweenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSunset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSunsetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSunsetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSunrise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSunriseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSunriseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSunriseNow">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSunriseNowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSunriseNowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentImageBrightness">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentImageBrightnessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentImageBrightnessResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSlides">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSlidesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSlidesResult" type="tns:ArrayOfSlide" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfSlide" nillable="true" type="tns:ArrayOfSlide" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="int" type="s:int" />
+      <s:element name="dateTime" type="s:dateTime" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFTPSlidesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFTPSlides" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPSlidesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFTPSlidesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveCameraImageOnServerIOSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveCameraImageOnServerIO" />
+  </wsdl:message>
+  <wsdl:message name="SaveCameraImageOnServerIOSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveCameraImageOnServerIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListAll" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartOrigSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListByStartOrig" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartOrigSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListByStartOrigResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListByStart" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFTPFileListByStartResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListFromLandingFTPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileListFromLandingFTP" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListFromLandingFTPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileListFromLandingFTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListFromLandingIOSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileListFromLandingIO" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListFromLandingIOSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileListFromLandingIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveImagesFromLandingSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveImagesFromLanding" />
+  </wsdl:message>
+  <wsdl:message name="MoveImagesFromLandingSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveImagesFromLandingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpContentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHelpContent" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpContentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHelpContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpSubjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHelpSubject" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpSubjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHelpSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScheduledMethodsSoapIn">
+    <wsdl:part name="parameters" element="tns:ScheduledMethods" />
+  </wsdl:message>
+  <wsdl:message name="ScheduledMethodsSoapOut">
+    <wsdl:part name="parameters" element="tns:ScheduledMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LastTimeCameraActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:LastTimeCameraActive" />
+  </wsdl:message>
+  <wsdl:message name="LastTimeCameraActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:LastTimeCameraActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsCameraActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:IsCameraActive" />
+  </wsdl:message>
+  <wsdl:message name="IsCameraActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:IsCameraActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraActiveAlertSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraActiveAlert" />
+  </wsdl:message>
+  <wsdl:message name="CameraActiveAlertSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraActiveAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:setDateRange" />
+  </wsdl:message>
+  <wsdl:message name="setDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:setDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDateStringFromDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getDateStringFromDateTime" />
+  </wsdl:message>
+  <wsdl:message name="getDateStringFromDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getDateStringFromDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDateTimeFromDateStringSoapIn">
+    <wsdl:part name="parameters" element="tns:getDateTimeFromDateString" />
+  </wsdl:message>
+  <wsdl:message name="getDateTimeFromDateStringSoapOut">
+    <wsdl:part name="parameters" element="tns:getDateTimeFromDateStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="LeaveALogSoapIn">
+    <wsdl:part name="parameters" element="tns:LeaveALog" />
+  </wsdl:message>
+  <wsdl:message name="LeaveALogSoapOut">
+    <wsdl:part name="parameters" element="tns:LeaveALogResponse" />
+  </wsdl:message>
+  <wsdl:message name="isDateBetweenSoapIn">
+    <wsdl:part name="parameters" element="tns:isDateBetween" />
+  </wsdl:message>
+  <wsdl:message name="isDateBetweenSoapOut">
+    <wsdl:part name="parameters" element="tns:isDateBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSunsetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSunset" />
+  </wsdl:message>
+  <wsdl:message name="GetSunsetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSunsetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSunrise" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSunriseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseNowSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSunriseNow" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseNowSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSunriseNowResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentImageBrightnessSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentImageBrightness" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentImageBrightnessSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentImageBrightnessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSlidesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSlides" />
+  </wsdl:message>
+  <wsdl:message name="GetSlidesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSlidesResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPSlidesHttpGetIn">
+    <wsdl:part name="contextKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPSlidesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSlide" />
+  </wsdl:message>
+  <wsdl:message name="SaveCameraImageOnServerIOHttpGetIn">
+    <wsdl:part name="fileName" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCameraImageOnServerIOHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListAllHttpGetIn" />
+  <wsdl:message name="GetFTPFileListAllHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByDateHttpGetIn">
+    <wsdl:part name="dateString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByRangeHttpGetIn">
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByRangeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartOrigHttpGetIn">
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="StartHour" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartOrigHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartHttpGetIn">
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="StartHour" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListFromLandingFTPHttpGetIn" />
+  <wsdl:message name="GetFileListFromLandingFTPHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListFromLandingIOHttpGetIn" />
+  <wsdl:message name="GetFileListFromLandingIOHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="MoveImagesFromLandingHttpGetIn" />
+  <wsdl:message name="MoveImagesFromLandingHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpContentHttpGetIn">
+    <wsdl:part name="indexkey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpContentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpSubjectHttpGetIn">
+    <wsdl:part name="indexkey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpSubjectHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ScheduledMethodsHttpGetIn" />
+  <wsdl:message name="ScheduledMethodsHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="LastTimeCameraActiveHttpGetIn" />
+  <wsdl:message name="LastTimeCameraActiveHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="IsCameraActiveHttpGetIn" />
+  <wsdl:message name="IsCameraActiveHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CameraActiveAlertHttpGetIn" />
+  <wsdl:message name="CameraActiveAlertHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailHttpGetIn">
+    <wsdl:part name="emailRecipient" type="s:string" />
+    <wsdl:part name="emailRecipientName" type="s:string" />
+    <wsdl:part name="emailSubject" type="s:string" />
+    <wsdl:part name="emailBody" type="s:string" />
+    <wsdl:part name="apicode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="setDateRangeHttpGetIn" />
+  <wsdl:message name="setDateRangeHttpGetOut" />
+  <wsdl:message name="getDateStringFromDateTimeHttpGetIn">
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDateStringFromDateTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getDateTimeFromDateStringHttpGetIn">
+    <wsdl:part name="dateString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDateTimeFromDateStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="LeaveALogHttpGetIn">
+    <wsdl:part name="Message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LeaveALogHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="isDateBetweenHttpGetIn">
+    <wsdl:part name="testDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isDateBetweenHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetSunsetHttpGetIn">
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSunsetHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseHttpGetIn">
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseNowHttpGetIn" />
+  <wsdl:message name="GetSunriseNowHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentImageBrightnessHttpGetIn" />
+  <wsdl:message name="GetCurrentImageBrightnessHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetSlidesHttpGetIn" />
+  <wsdl:message name="GetSlidesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSlide" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPSlidesHttpPostIn">
+    <wsdl:part name="contextKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPSlidesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSlide" />
+  </wsdl:message>
+  <wsdl:message name="SaveCameraImageOnServerIOHttpPostIn">
+    <wsdl:part name="fileName" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCameraImageOnServerIOHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListAllHttpPostIn" />
+  <wsdl:message name="GetFTPFileListAllHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByDateHttpPostIn">
+    <wsdl:part name="dateString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByRangeHttpPostIn">
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByRangeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartOrigHttpPostIn">
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="StartHour" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartOrigHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartHttpPostIn">
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="StartHour" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTPFileListByStartHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListFromLandingFTPHttpPostIn" />
+  <wsdl:message name="GetFileListFromLandingFTPHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListFromLandingIOHttpPostIn" />
+  <wsdl:message name="GetFileListFromLandingIOHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="MoveImagesFromLandingHttpPostIn" />
+  <wsdl:message name="MoveImagesFromLandingHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpContentHttpPostIn">
+    <wsdl:part name="indexkey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpContentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpSubjectHttpPostIn">
+    <wsdl:part name="indexkey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHelpSubjectHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ScheduledMethodsHttpPostIn" />
+  <wsdl:message name="ScheduledMethodsHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="LastTimeCameraActiveHttpPostIn" />
+  <wsdl:message name="LastTimeCameraActiveHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="IsCameraActiveHttpPostIn" />
+  <wsdl:message name="IsCameraActiveHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CameraActiveAlertHttpPostIn" />
+  <wsdl:message name="CameraActiveAlertHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailHttpPostIn">
+    <wsdl:part name="emailRecipient" type="s:string" />
+    <wsdl:part name="emailRecipientName" type="s:string" />
+    <wsdl:part name="emailSubject" type="s:string" />
+    <wsdl:part name="emailBody" type="s:string" />
+    <wsdl:part name="apicode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="setDateRangeHttpPostIn" />
+  <wsdl:message name="setDateRangeHttpPostOut" />
+  <wsdl:message name="getDateStringFromDateTimeHttpPostIn">
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDateStringFromDateTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getDateTimeFromDateStringHttpPostIn">
+    <wsdl:part name="dateString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDateTimeFromDateStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="LeaveALogHttpPostIn">
+    <wsdl:part name="Message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LeaveALogHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="isDateBetweenHttpPostIn">
+    <wsdl:part name="testDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isDateBetweenHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetSunsetHttpPostIn">
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSunsetHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseHttpPostIn">
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSunriseNowHttpPostIn" />
+  <wsdl:message name="GetSunriseNowHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentImageBrightnessHttpPostIn" />
+  <wsdl:message name="GetCurrentImageBrightnessHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetSlidesHttpPostIn" />
+  <wsdl:message name="GetSlidesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSlide" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Tinaja_x0020_Remote_x0020_MonitoringSoap">
+    <wsdl:operation name="GetFTPSlides">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts the ftp files array into an AjaxControlToolkit.Slide.</wsdl:documentation>
+      <wsdl:input message="tns:GetFTPSlidesSoapIn" />
+      <wsdl:output message="tns:GetFTPSlidesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCameraImageOnServerIO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saves an image file to the server based on file IO</wsdl:documentation>
+      <wsdl:input message="tns:SaveCameraImageOnServerIOSoapIn" />
+      <wsdl:output message="tns:SaveCameraImageOnServerIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListAll">
+      <wsdl:input message="tns:GetFTPFileListAllSoapIn" />
+      <wsdl:output message="tns:GetFTPFileListAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByDate">
+      <wsdl:input message="tns:GetFTPFileListByDateSoapIn" />
+      <wsdl:output message="tns:GetFTPFileListByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByRange">
+      <wsdl:input message="tns:GetFTPFileListByRangeSoapIn" />
+      <wsdl:output message="tns:GetFTPFileListByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStartOrig">
+      <wsdl:input message="tns:GetFTPFileListByStartOrigSoapIn" />
+      <wsdl:output message="tns:GetFTPFileListByStartOrigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStart">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves files for a given date and hour from the landing folder</wsdl:documentation>
+      <wsdl:input message="tns:GetFTPFileListByStartSoapIn" />
+      <wsdl:output message="tns:GetFTPFileListByStartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingFTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of files in the Landing Directory via FTP</wsdl:documentation>
+      <wsdl:input message="tns:GetFileListFromLandingFTPSoapIn" />
+      <wsdl:output message="tns:GetFileListFromLandingFTPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingIO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of files in the Landing Directory via the System.IO assembly</wsdl:documentation>
+      <wsdl:input message="tns:GetFileListFromLandingIOSoapIn" />
+      <wsdl:output message="tns:GetFileListFromLandingIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveImagesFromLanding">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Copies files from the landing directory (the directory where the camera sends images) to an ordered set of directories.  The directories are named based on YYYYMM.</wsdl:documentation>
+      <wsdl:input message="tns:MoveImagesFromLandingSoapIn" />
+      <wsdl:output message="tns:MoveImagesFromLandingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpContent">
+      <wsdl:input message="tns:GetHelpContentSoapIn" />
+      <wsdl:output message="tns:GetHelpContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpSubject">
+      <wsdl:input message="tns:GetHelpSubjectSoapIn" />
+      <wsdl:output message="tns:GetHelpSubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduledMethods">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A method call that can launch multiple methods on a scheduled basis; usually called from a Windows Service that has a timer function.</wsdl:documentation>
+      <wsdl:input message="tns:ScheduledMethodsSoapIn" />
+      <wsdl:output message="tns:ScheduledMethodsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LastTimeCameraActive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the DateTime that the camera was last active.</wsdl:documentation>
+      <wsdl:input message="tns:LastTimeCameraActiveSoapIn" />
+      <wsdl:output message="tns:LastTimeCameraActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCameraActive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a bool value indicating whether a camera is online.</wsdl:documentation>
+      <wsdl:input message="tns:IsCameraActiveSoapIn" />
+      <wsdl:output message="tns:IsCameraActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraActiveAlert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the existence of a recent camera file. If the file date of _Now.jpg is older than 10 minutes, the camera is considered offline.  IsCameraActive = false.</wsdl:documentation>
+      <wsdl:input message="tns:CameraActiveAlertSoapIn" />
+      <wsdl:output message="tns:CameraActiveAlertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requires a special API code.</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailSoapIn" />
+      <wsdl:output message="tns:SendEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDateRange">
+      <wsdl:input message="tns:setDateRangeSoapIn" />
+      <wsdl:output message="tns:setDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDateStringFromDateTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts a datetime into a date string compatible with the file name timestamp.  Will look like YYYYMMDD</wsdl:documentation>
+      <wsdl:input message="tns:getDateStringFromDateTimeSoapIn" />
+      <wsdl:output message="tns:getDateStringFromDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDateTimeFromDateString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts the File name timestamp formatted as YYYYMMDD into a datetime value.</wsdl:documentation>
+      <wsdl:input message="tns:getDateTimeFromDateStringSoapIn" />
+      <wsdl:output message="tns:getDateTimeFromDateStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveALog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Drops a log file post into the default log file.</wsdl:documentation>
+      <wsdl:input message="tns:LeaveALogSoapIn" />
+      <wsdl:output message="tns:LeaveALogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isDateBetween">
+      <wsdl:input message="tns:isDateBetweenSoapIn" />
+      <wsdl:output message="tns:isDateBetweenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Drops a log file post into the default log file.</wsdl:documentation>
+      <wsdl:input message="tns:GetSunsetSoapIn" />
+      <wsdl:output message="tns:GetSunsetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunrise">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the sunrise time for the datetime parameter at the coordinates for the device.</wsdl:documentation>
+      <wsdl:input message="tns:GetSunriseSoapIn" />
+      <wsdl:output message="tns:GetSunriseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunriseNow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the sunrise time for the current date at the coordinates for the device.  See also, GetSunrise(DateTime date)</wsdl:documentation>
+      <wsdl:input message="tns:GetSunriseNowSoapIn" />
+      <wsdl:output message="tns:GetSunriseNowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentImageBrightness">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">needs testing - Returns an average brightness value for the default _now.jpg image.</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentImageBrightnessSoapIn" />
+      <wsdl:output message="tns:GetCurrentImageBrightnessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSlides">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test for web service delivery of slides</wsdl:documentation>
+      <wsdl:input message="tns:GetSlidesSoapIn" />
+      <wsdl:output message="tns:GetSlidesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demo web method</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Tinaja_x0020_Remote_x0020_MonitoringHttpGet">
+    <wsdl:operation name="GetFTPSlides">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts the ftp files array into an AjaxControlToolkit.Slide.</wsdl:documentation>
+      <wsdl:input message="tns:GetFTPSlidesHttpGetIn" />
+      <wsdl:output message="tns:GetFTPSlidesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCameraImageOnServerIO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saves an image file to the server based on file IO</wsdl:documentation>
+      <wsdl:input message="tns:SaveCameraImageOnServerIOHttpGetIn" />
+      <wsdl:output message="tns:SaveCameraImageOnServerIOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListAll">
+      <wsdl:input message="tns:GetFTPFileListAllHttpGetIn" />
+      <wsdl:output message="tns:GetFTPFileListAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByDate">
+      <wsdl:input message="tns:GetFTPFileListByDateHttpGetIn" />
+      <wsdl:output message="tns:GetFTPFileListByDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByRange">
+      <wsdl:input message="tns:GetFTPFileListByRangeHttpGetIn" />
+      <wsdl:output message="tns:GetFTPFileListByRangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStartOrig">
+      <wsdl:input message="tns:GetFTPFileListByStartOrigHttpGetIn" />
+      <wsdl:output message="tns:GetFTPFileListByStartOrigHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStart">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves files for a given date and hour from the landing folder</wsdl:documentation>
+      <wsdl:input message="tns:GetFTPFileListByStartHttpGetIn" />
+      <wsdl:output message="tns:GetFTPFileListByStartHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingFTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of files in the Landing Directory via FTP</wsdl:documentation>
+      <wsdl:input message="tns:GetFileListFromLandingFTPHttpGetIn" />
+      <wsdl:output message="tns:GetFileListFromLandingFTPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingIO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of files in the Landing Directory via the System.IO assembly</wsdl:documentation>
+      <wsdl:input message="tns:GetFileListFromLandingIOHttpGetIn" />
+      <wsdl:output message="tns:GetFileListFromLandingIOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveImagesFromLanding">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Copies files from the landing directory (the directory where the camera sends images) to an ordered set of directories.  The directories are named based on YYYYMM.</wsdl:documentation>
+      <wsdl:input message="tns:MoveImagesFromLandingHttpGetIn" />
+      <wsdl:output message="tns:MoveImagesFromLandingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpContent">
+      <wsdl:input message="tns:GetHelpContentHttpGetIn" />
+      <wsdl:output message="tns:GetHelpContentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpSubject">
+      <wsdl:input message="tns:GetHelpSubjectHttpGetIn" />
+      <wsdl:output message="tns:GetHelpSubjectHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduledMethods">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A method call that can launch multiple methods on a scheduled basis; usually called from a Windows Service that has a timer function.</wsdl:documentation>
+      <wsdl:input message="tns:ScheduledMethodsHttpGetIn" />
+      <wsdl:output message="tns:ScheduledMethodsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LastTimeCameraActive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the DateTime that the camera was last active.</wsdl:documentation>
+      <wsdl:input message="tns:LastTimeCameraActiveHttpGetIn" />
+      <wsdl:output message="tns:LastTimeCameraActiveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCameraActive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a bool value indicating whether a camera is online.</wsdl:documentation>
+      <wsdl:input message="tns:IsCameraActiveHttpGetIn" />
+      <wsdl:output message="tns:IsCameraActiveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraActiveAlert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the existence of a recent camera file. If the file date of _Now.jpg is older than 10 minutes, the camera is considered offline.  IsCameraActive = false.</wsdl:documentation>
+      <wsdl:input message="tns:CameraActiveAlertHttpGetIn" />
+      <wsdl:output message="tns:CameraActiveAlertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requires a special API code.</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailHttpGetIn" />
+      <wsdl:output message="tns:SendEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDateRange">
+      <wsdl:input message="tns:setDateRangeHttpGetIn" />
+      <wsdl:output message="tns:setDateRangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDateStringFromDateTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts a datetime into a date string compatible with the file name timestamp.  Will look like YYYYMMDD</wsdl:documentation>
+      <wsdl:input message="tns:getDateStringFromDateTimeHttpGetIn" />
+      <wsdl:output message="tns:getDateStringFromDateTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDateTimeFromDateString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts the File name timestamp formatted as YYYYMMDD into a datetime value.</wsdl:documentation>
+      <wsdl:input message="tns:getDateTimeFromDateStringHttpGetIn" />
+      <wsdl:output message="tns:getDateTimeFromDateStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveALog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Drops a log file post into the default log file.</wsdl:documentation>
+      <wsdl:input message="tns:LeaveALogHttpGetIn" />
+      <wsdl:output message="tns:LeaveALogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isDateBetween">
+      <wsdl:input message="tns:isDateBetweenHttpGetIn" />
+      <wsdl:output message="tns:isDateBetweenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Drops a log file post into the default log file.</wsdl:documentation>
+      <wsdl:input message="tns:GetSunsetHttpGetIn" />
+      <wsdl:output message="tns:GetSunsetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunrise">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the sunrise time for the datetime parameter at the coordinates for the device.</wsdl:documentation>
+      <wsdl:input message="tns:GetSunriseHttpGetIn" />
+      <wsdl:output message="tns:GetSunriseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunriseNow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the sunrise time for the current date at the coordinates for the device.  See also, GetSunrise(DateTime date)</wsdl:documentation>
+      <wsdl:input message="tns:GetSunriseNowHttpGetIn" />
+      <wsdl:output message="tns:GetSunriseNowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentImageBrightness">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">needs testing - Returns an average brightness value for the default _now.jpg image.</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentImageBrightnessHttpGetIn" />
+      <wsdl:output message="tns:GetCurrentImageBrightnessHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSlides">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test for web service delivery of slides</wsdl:documentation>
+      <wsdl:input message="tns:GetSlidesHttpGetIn" />
+      <wsdl:output message="tns:GetSlidesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demo web method</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Tinaja_x0020_Remote_x0020_MonitoringHttpPost">
+    <wsdl:operation name="GetFTPSlides">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts the ftp files array into an AjaxControlToolkit.Slide.</wsdl:documentation>
+      <wsdl:input message="tns:GetFTPSlidesHttpPostIn" />
+      <wsdl:output message="tns:GetFTPSlidesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCameraImageOnServerIO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saves an image file to the server based on file IO</wsdl:documentation>
+      <wsdl:input message="tns:SaveCameraImageOnServerIOHttpPostIn" />
+      <wsdl:output message="tns:SaveCameraImageOnServerIOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListAll">
+      <wsdl:input message="tns:GetFTPFileListAllHttpPostIn" />
+      <wsdl:output message="tns:GetFTPFileListAllHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByDate">
+      <wsdl:input message="tns:GetFTPFileListByDateHttpPostIn" />
+      <wsdl:output message="tns:GetFTPFileListByDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByRange">
+      <wsdl:input message="tns:GetFTPFileListByRangeHttpPostIn" />
+      <wsdl:output message="tns:GetFTPFileListByRangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStartOrig">
+      <wsdl:input message="tns:GetFTPFileListByStartOrigHttpPostIn" />
+      <wsdl:output message="tns:GetFTPFileListByStartOrigHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStart">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves files for a given date and hour from the landing folder</wsdl:documentation>
+      <wsdl:input message="tns:GetFTPFileListByStartHttpPostIn" />
+      <wsdl:output message="tns:GetFTPFileListByStartHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingFTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of files in the Landing Directory via FTP</wsdl:documentation>
+      <wsdl:input message="tns:GetFileListFromLandingFTPHttpPostIn" />
+      <wsdl:output message="tns:GetFileListFromLandingFTPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingIO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of files in the Landing Directory via the System.IO assembly</wsdl:documentation>
+      <wsdl:input message="tns:GetFileListFromLandingIOHttpPostIn" />
+      <wsdl:output message="tns:GetFileListFromLandingIOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveImagesFromLanding">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Copies files from the landing directory (the directory where the camera sends images) to an ordered set of directories.  The directories are named based on YYYYMM.</wsdl:documentation>
+      <wsdl:input message="tns:MoveImagesFromLandingHttpPostIn" />
+      <wsdl:output message="tns:MoveImagesFromLandingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpContent">
+      <wsdl:input message="tns:GetHelpContentHttpPostIn" />
+      <wsdl:output message="tns:GetHelpContentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpSubject">
+      <wsdl:input message="tns:GetHelpSubjectHttpPostIn" />
+      <wsdl:output message="tns:GetHelpSubjectHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduledMethods">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A method call that can launch multiple methods on a scheduled basis; usually called from a Windows Service that has a timer function.</wsdl:documentation>
+      <wsdl:input message="tns:ScheduledMethodsHttpPostIn" />
+      <wsdl:output message="tns:ScheduledMethodsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LastTimeCameraActive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the DateTime that the camera was last active.</wsdl:documentation>
+      <wsdl:input message="tns:LastTimeCameraActiveHttpPostIn" />
+      <wsdl:output message="tns:LastTimeCameraActiveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCameraActive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a bool value indicating whether a camera is online.</wsdl:documentation>
+      <wsdl:input message="tns:IsCameraActiveHttpPostIn" />
+      <wsdl:output message="tns:IsCameraActiveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraActiveAlert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the existence of a recent camera file. If the file date of _Now.jpg is older than 10 minutes, the camera is considered offline.  IsCameraActive = false.</wsdl:documentation>
+      <wsdl:input message="tns:CameraActiveAlertHttpPostIn" />
+      <wsdl:output message="tns:CameraActiveAlertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requires a special API code.</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailHttpPostIn" />
+      <wsdl:output message="tns:SendEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDateRange">
+      <wsdl:input message="tns:setDateRangeHttpPostIn" />
+      <wsdl:output message="tns:setDateRangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDateStringFromDateTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts a datetime into a date string compatible with the file name timestamp.  Will look like YYYYMMDD</wsdl:documentation>
+      <wsdl:input message="tns:getDateStringFromDateTimeHttpPostIn" />
+      <wsdl:output message="tns:getDateStringFromDateTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDateTimeFromDateString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Converts the File name timestamp formatted as YYYYMMDD into a datetime value.</wsdl:documentation>
+      <wsdl:input message="tns:getDateTimeFromDateStringHttpPostIn" />
+      <wsdl:output message="tns:getDateTimeFromDateStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveALog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Drops a log file post into the default log file.</wsdl:documentation>
+      <wsdl:input message="tns:LeaveALogHttpPostIn" />
+      <wsdl:output message="tns:LeaveALogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isDateBetween">
+      <wsdl:input message="tns:isDateBetweenHttpPostIn" />
+      <wsdl:output message="tns:isDateBetweenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Drops a log file post into the default log file.</wsdl:documentation>
+      <wsdl:input message="tns:GetSunsetHttpPostIn" />
+      <wsdl:output message="tns:GetSunsetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunrise">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the sunrise time for the datetime parameter at the coordinates for the device.</wsdl:documentation>
+      <wsdl:input message="tns:GetSunriseHttpPostIn" />
+      <wsdl:output message="tns:GetSunriseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSunriseNow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the sunrise time for the current date at the coordinates for the device.  See also, GetSunrise(DateTime date)</wsdl:documentation>
+      <wsdl:input message="tns:GetSunriseNowHttpPostIn" />
+      <wsdl:output message="tns:GetSunriseNowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentImageBrightness">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">needs testing - Returns an average brightness value for the default _now.jpg image.</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentImageBrightnessHttpPostIn" />
+      <wsdl:output message="tns:GetCurrentImageBrightnessHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSlides">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test for web service delivery of slides</wsdl:documentation>
+      <wsdl:input message="tns:GetSlidesHttpPostIn" />
+      <wsdl:output message="tns:GetSlidesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demo web method</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Tinaja_x0020_Remote_x0020_MonitoringSoap" type="tns:Tinaja_x0020_Remote_x0020_MonitoringSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFTPSlides">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetFTPSlides" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCameraImageOnServerIO">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/SaveCameraImageOnServerIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListAll">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByDate">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByRange">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStartOrig">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListByStartOrig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStart">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListByStart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingFTP">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetFileListFromLandingFTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingIO">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetFileListFromLandingIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveImagesFromLanding">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/MoveImagesFromLanding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpContent">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetHelpContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpSubject">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetHelpSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduledMethods">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/ScheduledMethods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastTimeCameraActive">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/LastTimeCameraActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCameraActive">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/IsCameraActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraActiveAlert">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/CameraActiveAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDateRange">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/setDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDateStringFromDateTime">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/getDateStringFromDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDateTimeFromDateString">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/getDateTimeFromDateString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveALog">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/LeaveALog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDateBetween">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/isDateBetween" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunset">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetSunset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunrise">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetSunrise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunriseNow">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetSunriseNow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentImageBrightness">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetCurrentImageBrightness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlides">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/GetSlides" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://freeranger.com/tinajarm/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Tinaja_x0020_Remote_x0020_MonitoringSoap12" type="tns:Tinaja_x0020_Remote_x0020_MonitoringSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFTPSlides">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetFTPSlides" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCameraImageOnServerIO">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/SaveCameraImageOnServerIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListAll">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByDate">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByRange">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStartOrig">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListByStartOrig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStart">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetFTPFileListByStart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingFTP">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetFileListFromLandingFTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingIO">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetFileListFromLandingIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveImagesFromLanding">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/MoveImagesFromLanding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpContent">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetHelpContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpSubject">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetHelpSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduledMethods">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/ScheduledMethods" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastTimeCameraActive">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/LastTimeCameraActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCameraActive">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/IsCameraActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraActiveAlert">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/CameraActiveAlert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/SendEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDateRange">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/setDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDateStringFromDateTime">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/getDateStringFromDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDateTimeFromDateString">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/getDateTimeFromDateString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveALog">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/LeaveALog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDateBetween">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/isDateBetween" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunset">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetSunset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunrise">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetSunrise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunriseNow">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetSunriseNow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentImageBrightness">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetCurrentImageBrightness" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlides">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/GetSlides" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://freeranger.com/tinajarm/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Tinaja_x0020_Remote_x0020_MonitoringHttpGet" type="tns:Tinaja_x0020_Remote_x0020_MonitoringHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetFTPSlides">
+      <http:operation location="/GetFTPSlides" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCameraImageOnServerIO">
+      <http:operation location="/SaveCameraImageOnServerIO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListAll">
+      <http:operation location="/GetFTPFileListAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByDate">
+      <http:operation location="/GetFTPFileListByDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByRange">
+      <http:operation location="/GetFTPFileListByRange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStartOrig">
+      <http:operation location="/GetFTPFileListByStartOrig" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStart">
+      <http:operation location="/GetFTPFileListByStart" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingFTP">
+      <http:operation location="/GetFileListFromLandingFTP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingIO">
+      <http:operation location="/GetFileListFromLandingIO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveImagesFromLanding">
+      <http:operation location="/MoveImagesFromLanding" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpContent">
+      <http:operation location="/GetHelpContent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpSubject">
+      <http:operation location="/GetHelpSubject" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduledMethods">
+      <http:operation location="/ScheduledMethods" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastTimeCameraActive">
+      <http:operation location="/LastTimeCameraActive" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCameraActive">
+      <http:operation location="/IsCameraActive" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraActiveAlert">
+      <http:operation location="/CameraActiveAlert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <http:operation location="/SendEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDateRange">
+      <http:operation location="/setDateRange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDateStringFromDateTime">
+      <http:operation location="/getDateStringFromDateTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDateTimeFromDateString">
+      <http:operation location="/getDateTimeFromDateString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveALog">
+      <http:operation location="/LeaveALog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDateBetween">
+      <http:operation location="/isDateBetween" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunset">
+      <http:operation location="/GetSunset" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunrise">
+      <http:operation location="/GetSunrise" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunriseNow">
+      <http:operation location="/GetSunriseNow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentImageBrightness">
+      <http:operation location="/GetCurrentImageBrightness" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlides">
+      <http:operation location="/GetSlides" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Tinaja_x0020_Remote_x0020_MonitoringHttpPost" type="tns:Tinaja_x0020_Remote_x0020_MonitoringHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetFTPSlides">
+      <http:operation location="/GetFTPSlides" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCameraImageOnServerIO">
+      <http:operation location="/SaveCameraImageOnServerIO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListAll">
+      <http:operation location="/GetFTPFileListAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByDate">
+      <http:operation location="/GetFTPFileListByDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByRange">
+      <http:operation location="/GetFTPFileListByRange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStartOrig">
+      <http:operation location="/GetFTPFileListByStartOrig" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTPFileListByStart">
+      <http:operation location="/GetFTPFileListByStart" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingFTP">
+      <http:operation location="/GetFileListFromLandingFTP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListFromLandingIO">
+      <http:operation location="/GetFileListFromLandingIO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveImagesFromLanding">
+      <http:operation location="/MoveImagesFromLanding" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpContent">
+      <http:operation location="/GetHelpContent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHelpSubject">
+      <http:operation location="/GetHelpSubject" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduledMethods">
+      <http:operation location="/ScheduledMethods" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastTimeCameraActive">
+      <http:operation location="/LastTimeCameraActive" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCameraActive">
+      <http:operation location="/IsCameraActive" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraActiveAlert">
+      <http:operation location="/CameraActiveAlert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <http:operation location="/SendEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDateRange">
+      <http:operation location="/setDateRange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDateStringFromDateTime">
+      <http:operation location="/getDateStringFromDateTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDateTimeFromDateString">
+      <http:operation location="/getDateTimeFromDateString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveALog">
+      <http:operation location="/LeaveALog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDateBetween">
+      <http:operation location="/isDateBetween" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunset">
+      <http:operation location="/GetSunset" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunrise">
+      <http:operation location="/GetSunrise" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSunriseNow">
+      <http:operation location="/GetSunriseNow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentImageBrightness">
+      <http:operation location="/GetCurrentImageBrightness" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlides">
+      <http:operation location="/GetSlides" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Tinaja_x0020_Remote_x0020_Monitoring">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Services supporting the Tinaja Remote Monitoring application.</wsdl:documentation>
+    <wsdl:port name="Tinaja_x0020_Remote_x0020_MonitoringSoap" binding="tns:Tinaja_x0020_Remote_x0020_MonitoringSoap">
+      <soap:address location="http://freeranger.com/barreno/TinajaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Tinaja_x0020_Remote_x0020_MonitoringSoap12" binding="tns:Tinaja_x0020_Remote_x0020_MonitoringSoap12">
+      <soap12:address location="http://freeranger.com/barreno/TinajaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Tinaja_x0020_Remote_x0020_MonitoringHttpGet" binding="tns:Tinaja_x0020_Remote_x0020_MonitoringHttpGet">
+      <http:address location="http://freeranger.com/barreno/TinajaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Tinaja_x0020_Remote_x0020_MonitoringHttpPost" binding="tns:Tinaja_x0020_Remote_x0020_MonitoringHttpPost">
+      <http:address location="http://freeranger.com/barreno/TinajaService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
